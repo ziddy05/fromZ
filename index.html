@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR RIANG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="./images/zr.jpg" alt="Logo" class="logo-img"></div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#meet">Me as I Am</a>
+            <a href="#lines">Read Me</a>
+            <a href="#tunes">Play Tunes</a>
+        </div>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hello, <span class="highlight">RIANG!</span></h1>
+            <p>This was made by Iska. I started from December 01, 2025 and finished on December 28, 2025. I took my time and had fun making this the best I could. It's not something big, but I hope you'll like it.</p>
+            <button class="cta-button" id="exploreBtn">Explore More</button>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Enjoy, baby!</h2>
+        <div class="cards-container">
+            <div class="card">
+                <i class="fas fa-image"></i>
+                <h3>Beautiful Gallery</h3>
+                <p>Taken by us for us. + A few surprises just for you!</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-heart"></i>
+                <h3>Love Meter</h3>
+                <p>Check our love compatibility?</p>
+                <div class="love-meter">
+                    <div class="love-fill"></div>
+                </div>
+                <button class="love-btn">Measure Love</button>
+            </div>
+            <div class="card">
+                <i class="fas fa-music"></i>
+                <h3>Music Player</h3>
+                <p>Listen to tunes dedicated to you in the <a href="#tunes">Play Tunes</a> section!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="together">
+                <div class="gallery-image-container">
+                    <img src="./images/pc6.jpg" alt="rb" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <button class="gallery-like"><i class="far fa-heart"></i> <span>Like</span></button>
+            </div>
+            <div class="gallery-item" data-category="adventures">
+                <div class="gallery-image-container">
+                    <img src="./images/pc7.jpg" alt="rb" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <button class="gallery-like"><i class="far fa-heart"></i> <span>Like</span></button>
+            </div>
+            <div class="gallery-item" data-category="special">
+                <div class="gallery-image-container">
+                    <img src="./images/pc8.jpg" alt="rb" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <button class="gallery-like"><i class="far fa-heart"></i> <span>Like</span></button>
+            </div>
+            <div class="gallery-item" data-category="special">
+                <div class="gallery-image-container">
+                    <img src="./images/pc9.jpg" alt="rb" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <button class="gallery-like"><i class="far fa-heart"></i> <span>Like</span></button>
+            </div>
+        </div>
+        <div class="gallery-load-more">
+            <button id="loadMoreBtn">Load More</button>
+        </div>
+    </section>
+
+    <section id="meet" class="content-section">
+        <div class="container">
+            <h2>Introducing Iska</h2>
+            <div class="content-box story-container">
+                <div class="story-progress">
+                    <div class="progress-step active" data-step="1"></div>
+                    <div class="progress-connector"></div>
+                    <div class="progress-step" data-step="2"></div>
+                    <div class="progress-connector"></div>
+                    <div class="progress-step" data-step="3"></div>
+                </div>
+                
+                <div class="story-content">
+                    <div class="story-slide active" data-slide="1">
+                        <h3>Introducing Me</h3>
+                        <div class="story-text">
+                            What's up, pretty? It's me, Zid. You definitely know my favorite color since forever but here's more. I want you to learn about me so you would be able to say you love me as I am.
+                        </div>
+                        <div class="story-image">
+                            <img src="./images/iska1.jpg" alt="me" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="story-slide" data-slide="2">
+                        <h3>Long Ass Name</h3>
+                        <div class="story-text">
+                            <p>My full name is Francheska Patricia DG. Pati Cruz. Also known as Iska, Patchi, Pat, Pati, and Cheska. Quite a number of nicknames? Yeah. I was born on August 31, 2005, just exactly the date I told you. I love drawing, you know, just the usual thing I do. I also love singing though I'm not too good at it most of the time. I was an achiever, always called as the "brain" of every group of friends I've been in. I was admired and hated at the same time (but it never shook me at all, not even once.).</p>
+                        </div>
+                        <div class="story-image">
+                            <img src="./images/iska0.jpg" alt="First date" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="story-slide" data-slide="3">
+                        <h3>The Me</h3>
+                        <div class="story-text">
+                            <p>I like it when my egg is cooked sunny side up, a little saltier than the way you cook eggs (probably). My favorite dish is Kare-Kare. I love sweets, I have a sweet tooth. I like being alone. I love coffee! So much that I developed caffeine addiction HAHAHA. I like my feet peeking out of the blanket everytime I sleep, plus a pillow in my arms to accompany me in my dreams. I think of you a lot, it makes my head throb. I like flowers, my favorite are orchids. I like it when the moon looks like a toenail (crescent). I like my bathwater warm. I love spice, but I also hate it because it affects my hearing. I love anime, my favorite is My Hero Academia. I like it when you call me pogi, or compliment me, even for things as simple as telling me I'm good right after I eat my lunch and dinner. I like talking to you a lot, the thought alone it soothes me.</p>
+                            <br><p>I think that's all(?) Ask me about anything, anything at all. I'll answer you each time, baby.</p>
+                        </div>
+                        <div class="story-image">
+                            <img src="./images/iska3.jpg" alt="me" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-controls">
+                    <button class="story-nav prev-btn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <div class="pagination">
+                        <span class="current-slide">1</span> / <span class="total-slides">3</span>
+                    </div>
+                    <button class="story-nav next-btn">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lines" class="content-section alt-bg">
+        <div class="container">
+            <h2>Lines That Speak Your Name</h2>
+            <div class="content-box love-lines-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="poetry">Pieces Of Me</button>
+                    <button class="tab-btn" data-tab="movies">Movie Quotes</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="poetry">
+                        <div class="poem-container">
+                            <div class="poem">
+                                <h3>I Stay With You</h3>
+                                <p class="poem-author">by Zael</p>
+                                <div class="poem-lines">
+                                    <p>I cannot rearrange the world to your liking, nor press the stars into patterns that soothe your storms. But I'll walk with you through its storms and sharp edges, I'll carry the silence when words are too much, offer you a moment— a small space of quiet breath where the chaos holds still and the weight of things becomes lighter, and where the wildflowers grow back through the Earth's cracks. Let me hold your hand through it all, and I will stay with you through every fall.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+                            
+                            <div class="poem">
+                                <h3>The Love That Remembers</h3>
+                                <p class="poem-author">by Zael</p>
+                                <div class="poem-lines">
+                                    <p>You are the kind of love that remembers without being told. The love that pulls me back when I'm lost— the lighthouse that guides me home if ever I falter or drift far away, and the shelter I seek when the world won't conform.
+You are the kind of love that doesn't need to be asked. You know when to speak and when to just sit with me in silence. You show up. You stay. You see every version of me that I sometimes forget exists. And somehow, you know it all— what I was, what I am, what I need— without making me feel like a test to be passed, but like a book you want to learn and love— a story you're eager to read.
+<br><br>You are the kind of love that knows— the remembering that makes me whole.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+
+                            <div class="poem">
+                                <h3>Safe Haven</h3>
+                                <p class="poem-author">by Zael</p>
+                                <div class="poem-lines">
+                                    <p>There's a softness in your hands that I can't explain— how they smooth over the dents my past left on me, how they caress me in such a way that chases away the worry that's gnawing at me from within. You took my hand, pulled me close, and held me with gentleness and warmth— like a balm to my hurting soul, like a soft whisper that said: "Don't let go. You're safe here."
+<br><br>I've been held before, but I didn't know this is how it feels— to be held by hands as gentle as the ones I always tried to give— to be looked at and seen through eyes that reflect the same affection as mine. It feels familiar yet new all at once— like coming home to a place I've been, but never realized I needed.  
+<br><br>With you, there was never any pressure to heal faster or speak louder. You made it safe to simply be— like a presence that says "Take your time. I see you, and it's okay." With you, I found comfort— the peace I didn't know I was missing. Not the one that comes from being alone, but the one that comes from being truly loved— held, seen, and known.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+            
+                            <div class="poem">
+                                <h3>Unfinished Canvas</h3>
+                                <p class="poem-author">by Zael</p>
+                                <div class="poem-lines">
+                                    <p>I've never seen myself as something whole, thinking I was nothing more than broken pieces—a canvas ruined by mistakes. I used to sell myself short, crushed by the hollow weight of being "just" and "almost enough". Yet still, you linger. You trace the broken lines others call flaws with your painted fingertips, naming them beautiful. You see art in everything—like an artist who sees meaning in the overlooked, light seeping through a door left ajar, and even in a worn, secondhand heart like mine.
+<br><br>You carry the gift of seeing what is into what could be—like brushstrokes waiting to fill the void and empty spaces. And so, though weathered, cracked, and imperfect, you've shown me that even I could still be worth holding—an unfinished canvas, but no less a work of art.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+
+                            <div class="poem">
+                                <h3>The Quiet</h3>
+                                <p class="poem-author">by Zael</p>
+                                <div class="poem-lines">
+                                    <p>I do not want less of you, and I do not demand more. I just want you as you are—no filters, no masks, no trying too hard to fit into the corners of my affection. I want the you who forgets about things sometimes, who gets motherly when I'm being childish, who sometimes is uncertain and indecisive, but always warm in the way you reach for me.
+<br>From your presence, I seek the comfort I give just as much—a balance, a breathing rhythm
+that hums between two hearts that beats for one another. With you, love does not have to be larger than life; it lives quietly even in the infinitesimally small gestures, like scribbling your name in my palm, so that even if I close my hand, I'd carry your heart with me in the ink pressed into the lines of my skin. Or writing little love notes in the back of my notebook that I would never let you read—tiny reminders that love doesn't always have to shout to be heard. 
+<br>And when time pulls at us, as it always will, I will still trace your name in my palm—along the lines of fate where it may have been washed off, and in empty spaces, hoping you feel it somehow—the whisper of a love that never asked to be more than it already was.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+
+                            <div class="poem">
+                                <h3>I Carry Your Heart</h3>
+                                <p class="poem-author">by Zael</p>
+                                <div class="poem-lines">
+                                    <p>Your heart is easy to hold—not weighted by the walls built from past aches. It fits gently in these palms of mine, as if it were made for them alone and for no one else's. I pray, in the most selfish way, that only I get to hold it like this, that it's only me you'll ever trust with it.
+<br><br>I'll unlearn how to let go. So if ever your love trembles, let it find its way back to me. For I'll be here—arms wide open, heart steady—ready to face forever's cruelty with you, to embrace and choose you all over again.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="movies">
+                        <div class="quote-slider">
+                            <div class="quote active">
+                                <blockquote>
+                                    “I love you more than coffee. And I really love coffee.”
+                                    <footer>- Someone Great</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                     "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible."
+                                    <footer>- When Harry Met Sally</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    "You had me at hello."
+                                    <footer>- Jerry Maguire</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “I’ll never let go.”
+                                    <footer>- Titanic</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                     “Frankly, my dear, I don’t give a damn—because I love you.”
+                                    <footer>- Gone With the Wind</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “To me, you are perfect.” 
+                                    <footer>- Love Actually</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “I want all of you, forever, you and me, every day.”
+                                    <footer>- The Notebook</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “I’m yours, heart and soul.”
+                                    <footer>- Sense and Sensibility</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “I would rather share one lifetime with you than face all the ages of this world alone.” 
+                                    <footer>- LOTR: Fellowship of the Ring</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “You are my greatest adventure.”
+                                    <footer>- The Incredibles</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “You’re everything I never knew I always wanted.”
+                                    <footer>- Fools Rush In</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “I just want to be the one who makes you smile.”
+                                    <footer>- Dear John</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                     “I love you. That’s the beginning and end of everything.”
+                                    <footer>- The Great Gatsby</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “You have bewitched me, body and soul.”
+                                    <footer>- Pride & Prejudice</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote">
+                                <blockquote>
+                                    “You hold my heart in ways I never thought possible.”
+                                    <footer>- The Lucky One</footer>
+                                </blockquote>
+                            </div>
+                            <div class="quote-controls">
+                                <button class="quote-prev"><i class="fas fa-chevron-left"></i></button>
+                                <div class="quote-dots">
+                                    <span class="dot active" data-slide="0"></span>
+                                    <span class="dot" data-slide="1"></span>
+                                    <span class="dot" data-slide="2"></span>
+                                </div>
+                                <button class="quote-next"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tunes" class="content-section">
+        <div class="container">
+            <h2>Tunes That Sound Like You</h2>
+            <div class="content-box music-player-container">
+                <div class="music-player-wrapper">
+                    <div class="now-playing">
+                        <div class="album-art">
+                            <img src="https://source.unsplash.com/random/300x300/?album,cover,love" alt="Album Art" id="albumArt">
+                        </div>
+                        <div class="track-info">
+                            <h3 id="trackTitle">Perfect</h3>
+                            <p id="artistName">Ed Sheeran</p>
+                            <div class="track-controls">
+                                <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                                <button class="play-btn" id="playPauseBtn"><i class="fas fa-play"></i></button>
+                                <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                                <button class="volume-btn" id="muteBtn"><i class="fas fa-volume-up"></i></button>
+                                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7">
+                            </div><br>
+                            <div class="track-controls" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                                <button style="font-size: 14px; padding: 6px 10px; height: 35px; width: 35px;" class="action-btn" id="shuffleBtn" title="Shuffle"><i class="fas fa-random"></i></button>
+                                <button style="font-size: 14px; padding: 6px 10px; height: 35px; width: 35px;" class="action-btn" id="repeatBtn" title="Repeat"><i class="fas fa-redo"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <div class="time">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">3:45</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" id="progressBar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="playlist-container">
+                        <div class="playlist" id="playlist">
+                            <!-- Songs will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div><br><br>
+
+                <p style="text-align: center;">I would like to add more soon!</p><br><br>
+                
+                <audio id="audioPlayer"></audio>
+            </div>
+        </div><br><br>
+        <div>
+            <div class="scroll-down2">
+                <span>Scroll More!</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="lines" class="content-section alt-bg">
+        <div class="container">
+            <h2>Love, Iska...</h2>
+            <div class="content-box love-lines-container">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="poetry">
+                        <div style="display: flex; justify-content: center;" class="poem-container">
+                            <div style="text-align: center;" class="poem">
+                                <p class="poem-author">by Yours Truly (Zid)</p>
+                                <div class="poem-lines" style="text-align: justify;">
+                                    <p>What's up? It's me again, Zid.
+
+I wish you a happy happy birthday, baby. It's been a while since we met—like what, two years already? I remember that was year 2023—feels like a lifetime ago. Now 2026 is just around the corner. Both adults now, both a little mature, a little tougher, a little wiser, and still carrying the same love we've always had.
+
+<br><br>I just want you to know that I’m soooo so proud of how far you’ve come. Life hasn’t been easy, I know, but you’re still standing, still glowing in your own way. I hope today you feel how special you are—not just because it’s your birthday, but because you truly deserve all the love this world can give.
+
+<br><br>Time changed a lot of things, but it never changed what you mean to me. There are days when I catch myself thinking about you—scratch that, I think of you every damn day, it never misses a second. Funny how distance can stretch the years, yet one memory can bring everything back in an instant. I still remember us five, me, you, Jaz, Yohan, and Dani. It was light and happy, a friendship with no pressure at all, just laughs, a little bit of bullying, and some sharing a bit of us. 
+
+<br><br>You've always been there, quiet, but still letting me, us, know that you're there. Would things be different if we weren't reunited with Jaz's effort? Would us still be the "us" today? There is not a day I didn't thank Jaz for pulling us all back one by one, filling in the seats in our friendship we had left once. 
+
+<br><br>And I thank you for giving us a chance even though I was kind of an unintentional asshole back then. I was numb— too dense to notice you. But I'm glad we didn't stop—you didn't stop, THEY didn't stop. It would be a huge regret missing a chance on someone as amazing as you are. 
+
+<br><br>Thank you for every memories we shared and the ones we are yet to make. I love you with everything I have—with every fiber of my being. More than anything. More than anime. More than coffee. More than cars. More than Jennie Kim.
+
+<br><br>On your birthday, I just hope you’re genuinely happy. I hope life is being kinder to you, and that you’re chasing the dreams you used to talk about. You deserve a love that feels safe, a peace that feels earned, and a joy that stays. I will always be here, maybe sometimes quiet, but here, with you. Always.</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="lines" class="content-section alt-bg">
+        <div class="container">
+            <h2>Love, Jazi...</h2>
+            <div class="content-box love-lines-container">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="poetry">
+                        <div style="display: flex; justify-content: center;" class="poem-container">
+                            <div style="text-align: center;" class="poem">
+                                <div class="poem-lines" style="text-align: justify;">
+                                    <p>Happy Birthday Allison!
+I never expected that stepping into an RP world would lead me to someone who feels this genuine. You came into my life quietly‚  But somehow you left an impact i didn’t see coming‚  Thank you for the conversations. the laughter, and the moments that made ordinary days feel lighter‚  I’m grateful for you. Truly
+<br><br>As you step into this new chapter, I hope you know how much your presence and existence has been appreciated‚ You have a way of making things feel calm and sincere‚  and that’s something rare. I’m really grateful i got to meet you, and I hope this year brings you happiness‚ growth. and everything kind and whatever is done by only me is your doing, my darling)</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section id="lines" class="content-section alt-bg">
+        <div class="container">
+            <h2>Love, Yohan...</h2>
+            <div class="content-box love-lines-container">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="poetry">
+                        <div style="display: flex; justify-content: center;" class="poem-container">
+                            <div style="text-align: center;" class="poem">
+                                <div class="poem-lines" style="text-align: justify;">
+                                    <p>happy 20th birthday, ali! you’re already a senior—just kidding! it’s crazy to think that even though we haven’t known each other our whole lives, in the years we’ve been friends, you’ve honestly come to feel like a little sister to me—and that’s something i really value. 
+
+<br><br>i want to especially thank you for being there the last time i needed someone to talk to. thank you for listening to my rants, giving me space to let things out, and making me feel heard without judgment. it meant more to me than you probably realize. not everyone knows how to show up like that, and i’m genuinely grateful that you did. 
+
+<br><br>turning 20 is such an important stage—so much learning, unlearning, healing, and growing happens at this age. may this coming year bring you clarity, strength, and peace. i hope you keep choosing what’s good for you, protecting your heart, and trusting yourself more, even on days when things feel uncertain. 
+
+<br><br>i also wish nothing but the best for you and zid. may what you have continue to grow in a healthy way—full of understanding, respect, and support. whatever it is that you’re building together, i hope it bring you happiness and help you both grow into even better versions of yourselves. 
+
+<br><br>thank you for being part of my life—for the conversations, the laughs, and even the quiet moments. just know that i’m always rooting for you and wishing you well, no matter where life takes you. 
+
+<br><br>enjoy your birthday, ali. eat your favorite food, laugh a lot, take photos, and celebrate yourself the way you deserve. here’s to 20—new lessons, new memories, and so many good things ahead. happy birthday, our dear ali!!</p>
+                                </div>
+                                <button class="read-more">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/zeepogi"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@zyxcen_"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/baeby_z/"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>Made by: Zael Corbin/Iska</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="./app.js"></script>
+</body>
+</html>
