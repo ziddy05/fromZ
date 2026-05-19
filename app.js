@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Random Anniversary Button Positioning
+    function positionRandomButton() {
+        const button = document.getElementById('randomAnniversaryBtn');
+        if (button) {
+            const maxX = window.innerWidth - 200; // Leave margin for button width
+            const maxY = window.innerHeight - 100; // Leave margin for button height
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    }
+    
+    // Position button on load
+    positionRandomButton();
+    
+    // Reposition button on window resize
+    window.addEventListener('resize', positionRandomButton);
+
     // Select all navigation links
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
@@ -110,11 +131,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isLiked) {
             icon.classList.remove('fas');
             icon.classList.add('far');
+            button.classList.remove('liked');
             const span = button.querySelector('span');
             if (span) span.textContent = 'Like';
         } else {
             icon.classList.remove('far');
             icon.classList.add('fas');
+            button.classList.add('liked');
             const span = button.querySelector('span');
             if (span) span.textContent = 'Liked';
         }
@@ -198,12 +221,82 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (newLikeBtn) {
                     newLikeBtn.addEventListener('click', handleLikeClick);
                 }
+                
+                // Add event listener to the new image container for modal
+                const newImageContainer = galleryItem.querySelector('.gallery-image-container');
+                if (newImageContainer) {
+                    newImageContainer.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const img = this.querySelector('img');
+                        if (img) {
+                            modal.style.display = 'block';
+                            modalImg.src = img.src;
+                            document.body.style.overflow = 'hidden'; // Prevent background scroll
+                        }
+                    });
+                }
             });
 
             // Hide load more button after loading all items (for demo)
             loadMoreBtn.style.display = 'none';
         });
     }
+
+    // --- Photo Modal Functionality ---
+    const modal = document.getElementById('photoModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalClose = document.querySelector('.modal-close');
+    
+    // Add click event to all gallery images
+    function addImageClickListeners() {
+        document.querySelectorAll('.gallery-image-container').forEach(container => {
+            container.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const img = this.querySelector('img');
+                if (img) {
+                    modal.style.display = 'block';
+                    modalImg.src = img.src;
+                    document.body.style.overflow = 'hidden'; // Prevent background scroll
+                }
+            });
+        });
+    }
+    
+    // Initial image listeners
+    addImageClickListeners();
+    
+    // Add image listeners to new items when loaded
+    const originalAddLikeListeners = addLikeListeners;
+    addLikeListeners = function() {
+        originalAddLikeListeners();
+        addImageClickListeners();
+    };
+    
+    // Close modal when clicking the close button
+    if (modalClose) {
+        modalClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scroll
+        });
+    }
+    
+    // Close modal when clicking outside the image
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scroll
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+    });
 
     // --- Tab functionality for Love Lines section ---
     const tabButtons = document.querySelectorAll('.tab-btn');

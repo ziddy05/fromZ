@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap');
+
+body {
+    background: rgba(255, 179, 179, 0.87);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px 0 20px 0;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: drift 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 60px);
+}
+
+/* Floating hearts background */
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 182, 193, 0.6);
+    font-size: 20px;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.demo-1 .uc-container{
+	width: 550px;
+	height: 550px;
+	margin: 40px auto;
+    position: relative;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    max-width: 90vw;
+    max-height: 70vh;
+} 
+
+.demo-1 .uc-single, 
+.demo-1 .uc-final,
+.demo-1 .uc-initial-content,
+.demo-1 .uc-back,
+.demo-1 .uc-front {
+	background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 50%, #ffe4b5 100%);
+    border: 3px solid #d4a574;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 
+                0 0 60px rgba(255, 107, 107, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.demo-1 .uc-initial-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+}
+
+.demo-1 span.clickme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b4513;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    background: transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.demo-1 span.clickme::before {
+    content: 'Z';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.demo-1 span.clickme:hover {
+    transform: scale(1.05);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.demo-1 .scrollwrap {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    overflow: auto;
+    position: absolute;
+    color: #8b4513;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 0 2px rgba(212, 165, 116, 0.3);
+    cursor: default;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, rgba(255, 249, 230, 0.9) 0%, rgba(255, 245, 204, 0.9) 100%);
+    border-radius: 12px;
+}
+
+.demo-1 .scrollwrap h3 {
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0 0 25px 0;
+    color: #d2691e;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.demo-1 .scrollwrap p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin: 0 0 20px 0;
+    font-style: italic;
+    text-align: justify;
+    position: relative;
+}
+
+.demo-1 .scrollwrap p.signature {
+    font-size: 20px;
+    text-align: right;
+    margin-top: 30px;
+    font-style: normal;
+    font-family: 'Dancing Script', cursive;
+    color: #d2691e;
+    font-weight: 700;
+}
+
+.demo-1 .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-family: 'Playfair Display', serif;
+    color: #8b4513;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border: 3px solid #8b4513;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 29px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.demo-1 .close:hover {
+    background: #8b4513;
+    color: white;
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Paper unfolding animation */
+.uc-container {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    max-width: 90vw;
+    max-height: 70vh;
+}
+
+.uc-initial-content,
+.uc-final-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.uc-final-content {
+    opacity: 0;
+    transform: rotateY(180deg);
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.uc-container.unfolded .uc-initial-content {
+    opacity: 0;
+    transform: rotateY(-180deg);
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.uc-container.unfolded .uc-final-content {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+
+/* Header styling */
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.74),
+                 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: glow 2s ease-in-out;
+    padding: 0 20px;
+}
+
+@keyframes glow {
+    from { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.5); }
+    to { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.8); }
+}
+
+/* Back button styling */
+.back-link {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+    border: 3px solid rgba(66, 66, 66, 0.3);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    font-family: 'Playfair Display', serif;
+}
+
+.back-link:hover {
+    opacity: 1;
+    background: rgba(88, 87, 87, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+</style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container">
+        <header>
+            <h1>HAPPY ANNIVERSARY WOOOHOOOOOO!!!</h1>
+        </header>
+        
+        <section class="main demo-1">
+            <div id="uc-container" class="uc-container">
+                <div class="uc-initial-content">
+                    <span class="clickme">Click to Open</span>
+                </div>
+                <div class="uc-final-content">
+                    <div class="scrollwrap">
+                        <h3>Dearest, Ria,</h3>
+                        <p>Thinking about how we started, it feels surreal. Some parts were rocky—confusing, painful—but those led us to where we are right now. Special thanks to those two na palaging nawawala.
+
+<br><br>From being a dense as fuck, numb, snobby, nonchalant, now I'm damn hopelessly, embarrassingly in love with you.
+
+<br><br>One year. May mga parts man na naging mahirap, I'm still proud and glad that both of us held on. There were days na mabilis natapos, meron din matagal and lumipas sa pangungulila kasi pawala-wala ka, bab :(. Isang taon, but still, 'di mo pa rin ako nilalambing, hays. Palitan mo ng kiss 'yan ha.
+
+<br><br>On a serious note, I'm glad we both took the chance to be together. It is true na may panahong napagod din akong mag-process, pero that wasn't because of you, that was because of the situation we were in, dahil 'yon sa takot pa rin ako na I might overwhelm you rin. I was scared na you'll slip away if sobrang pushy and makulit ako, or sa parts din na kung hindi ako nag-push. Gets mo ba? Medyo naguguluhan din ako sa sinasabi ko pero bahala ka na HAHAHHAHAHAH. I'm saying na either way, it was scary, there was fear but also hope na you'll still keep me. And hell yeah, you did. I hope we keep choosing to fix things together instead of bottling things up. You may be a pain in the ass sometimes, and me naman an asshole most of the time din, still I wouldn't have it any other way.
+
+<br><br>The year flew a little too fast, don't you think? Though the beginning of knowing you fr came a little late, (I didn't know you much until your birthday) at least now I'm learning how to love you better. And I'm taking my time.
+
+<br><br>Pawala-wala ka man minsan, that's okay. I'll always wait for you. Huwag lang straight 1 month kasi kawawa naman ako. May mga bagay na hindi ko malalaman dahil sa distance, pero know that I always pray for you to always be okay, healthy, and safe. I will always choose to understand. Plus, you always come back anyway, and that's enough for me.
+
+<br><br>Marami pa akong gustong sabihin pero I think stop ko na rito.
+
+<br><br>We've grown so much over the past year, and I hope we keep getting better. Together and individually.
+
+<br><br>Thank you for letting me in, for letting me love you.
+
+<br><br>It has been a long ride, and I'm hoping this would be an endless road for us.
+
+<br><br>Happy first anniversary, my Ria.</p>
+                        <p class="signature">Stupidly yours, Cian</p>
+                    </div>
+                    <span class="close">✕</span>
+                </div>
+            </div>
+        </section>
+        
+        <div>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Main Site
+            </a>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            var $container = $('#uc-container');
+            var isUnfolded = false;
+
+            // Paper unfolding functionality
+            $container.find('span.clickme').on('click', function() {
+                if (!isUnfolded) {
+                    $container.addClass('unfolded');
+                    isUnfolded = true;
+                    // Create celebration hearts
+                    for (let i = 0; i < 5; i++) {
+                        setTimeout(createFloatingHeart, i * 200);
+                    }
+                }
+            });
+
+            $container.find('span.close').on('click', function(e) {
+                e.stopPropagation();
+                if (isUnfolded) {
+                    $container.removeClass('unfolded');
+                    isUnfolded = false;
+                }
+            });
+
+            // Floating hearts generator
+            function createFloatingHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 8 + 's';
+                heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                document.getElementById('floatingHearts').appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 8000);
+            }
+
+            // Create hearts periodically
+            setInterval(createFloatingHeart, 3000);
+
+            // Initial hearts
+            for (let i = 0; i < 3; i++) {
+                setTimeout(createFloatingHeart, i * 1500);
+            }
+
+            // Add sparkle effects on mouse move
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.98) {
+                    const sparkle = document.createElement('div');
+                    sparkle.innerHTML = '✨';
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.left = e.clientX + 'px';
+                    sparkle.style.top = e.clientY + 'px';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.fontSize = '16px';
+                    sparkle.style.zIndex = '9999';
+                    sparkle.style.animation = 'float 2s ease-out forwards';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 2000);
+                }
+            });
+        });
+    </script>
+    </body>
+
+</html>
