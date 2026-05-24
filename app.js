@@ -486,38 +486,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Love Meter ---
-    const loveBtn = document.querySelector('.love-btn');
-    const loveFill = document.querySelector('.love-fill');
-    
-    if (loveBtn && loveFill) {
-        loveBtn.addEventListener('click', () => {
-            // Reset animation
-            loveFill.style.transition = 'none';
-            loveFill.style.width = '0';
-            
-            // Trigger reflow
-            void loveFill.offsetWidth;
-            
-            // Animate
-            loveFill.style.transition = 'width 3s ease-in-out';
-            const randomPercentage = Math.floor(Math.random() * 100) + 1;
-            loveFill.style.width = `${randomPercentage}%`;
-            
-            // Change button text
-            const loveMessages = [
-                `Compatibility: ${randomPercentage}%`, // Show result
-                'Measure Again',
-                'Check Again',
-                'Try Your Luck',
-                'Another Try?',
-                'Test Again'
-            ];
-            const randomMessage = loveMessages[Math.floor(Math.random() * loveMessages.length)];
-            loveBtn.textContent = randomMessage;
-        });
-    }
-
     // --- Initialize animations on scroll ---
     function animateOnScroll() {
         const elements = document.querySelectorAll('.card, .gallery-item, .features h2, .content-section h2, .love-lines-container, .music-player-container');
@@ -952,50 +920,6 @@ const songs = [
         initPlayer();
     }
 
-    // Love Meter Functionality
-    const loveMeterEl = document.querySelector('.love-meter');
-    const loveFillEl = document.querySelector('.love-fill');
-    const loveBtnEl = document.querySelector('.love-btn');
-    
-    if (loveMeterEl && loveFillEl && loveBtnEl) {
-        const loveMeterText = document.createElement('div');
-        loveMeterText.className = 'love-meter-text';
-        loveMeterEl.parentNode.insertBefore(loveMeterText, loveMeterEl.nextSibling);
-
-        loveBtnEl.addEventListener('click', function() {
-            // Generate a random percentage between 50-100 for more positive results
-            const percentage = Math.floor(Math.random() * 51) + 50;
-            
-            // Update the fill width
-            loveFillEl.style.width = `${percentage}%`;
-            
-            // Set the percentage text
-            loveMeterText.textContent = `${percentage}%`;
-            
-            // Add a fun message based on the percentage
-            let message = '';
-            if (percentage >= 90) {
-                message = 'Perfect Match! ';
-            } else if (percentage >= 75) {
-                message = 'Great Chemistry! ';
-            } else if (percentage >= 60) {
-                message = 'Good Potential! ';
-            } else {
-                message = 'Try Your Luck Again? ';
-            }
-            
-            // Update the button text
-            loveBtnEl.textContent = message;
-            
-            // Add a class to trigger animation
-            loveFillEl.classList.add('animate');
-            
-            // Remove animation class after it completes
-            setTimeout(() => {
-                loveFillEl.classList.remove('animate');
-            }, 1000);
-        });
-    }
 
 // Update active navigation on scroll
 window.addEventListener('scroll', updateActiveNav);
